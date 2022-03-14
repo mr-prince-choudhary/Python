@@ -1,0 +1,41 @@
+Method 1: Using pow() Function
+Code:-
+num, power = 3, 2
+print(pow(num,power))
+
+Output:-
+9
+
+
+Method 2: Using Simple Iteration
+Code:-
+num, power = 3, 2
+output = 1
+for i in range(power):
+  output*=num
+print(output)
+
+Output:-
+9
+
+
+Method 3: Using Python Operator
+Code:-
+num, power = 3, 2
+print(num**power)
+
+Output:-
+9
+
+
+Method 4: Using Recursion
+Code:-
+num, power = 3, 2
+def powerrecur(num,power):
+  if power == 0:
+    return 1
+  return num * powerrecur(num,power-1)
+print(powerrecur(num,power))
+
+Output:-
+9
