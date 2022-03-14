@@ -1,0 +1,36 @@
+Method 1: Using Modulo Operators
+Code:-
+number = 376
+square = pow(number, 2)
+mod = pow(10, len(str(number)))
+if square % mod == number:
+    print("It's an Automorphic Number")
+else:
+    print("It's not an Automorphic Number")
+
+Output:-
+it's an Automorphic Number
+
+
+Method 2 : One Line Method (using Slicing)
+Code:-
+n = 376
+print("YES" if int(str(n**2)[-len(str(n))::]) == n else "No")
+
+Output:-
+YES
+
+
+Method 3 : Using Endswith() Method
+Code:-
+num = 376
+a = str(num)
+num1 = num ** 2
+b = str(num1)
+if b.endswith(a):
+    print("It's an Automorphic Number")
+else:
+    print("It's not an Automorphic Number")
+
+Output:-
+It's an Automorphic Number
