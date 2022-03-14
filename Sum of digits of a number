@@ -1,0 +1,91 @@
+Method 1: Using String Character Extraction
+Code:-
+num = input("Enter Number: ")
+sum = 0
+for i in num:
+    sum = sum + int(i)
+print(sum)
+
+Output:-
+Enter Number: 12345
+15
+
+
+Method 2: Using Brute Force
+Code:-
+num = 1223
+sum = 0
+while num!=0:
+  digit = int(num%10)
+  sum+=digit
+  num = num/10
+print(sum)
+
+Output:-
+8
+
+
+Method 3: Using Recursion I
+Code:-
+num, sum = 1223, 0
+def findSum(num,sum):
+  if num==0:
+    return sum
+  digit = int(num%10)
+  sum+=digit
+  return findSum(num/10, sum)
+print(findSum(num,sum))
+
+Output:-
+8
+
+
+Method 4: Using Recursion II
+Code:-
+num = 1223
+def findSum(num):
+  if num==0:
+    return 0
+  return int(num%10) + findSum(num/10)
+print(findSum(num))
+
+Output:-
+8
+
+
+Method 5: Using ASCII Table
+Code:-
+num, sum = 1223, 0
+for i in range(len(str(num))):
+  sum += ord(str(num)[i]) - 48
+print(sum)
+
+Output:-
+8
+
+
+Method 6: Using map(), sum() and strip methods
+Code:-
+def getSum(n):
+    num_string = str(n)
+    list_of_number = list(map(int, num_string.strip()))
+    print(list_of_number)
+    return sum(list_of_number)   
+n = int(input("Enter the number: "))
+print(getSum(n))
+
+Output:-
+Enter the number: 12345
+15
+
+
+Method 7: One Line recursive function
+Code:-
+def sumDigits(n):
+    return 0 if n == 0 else int(n % 10) + sumDigits(int(n / 10)) 
+n = int(input("Enter the number: "))
+print(sumDigits(n))
+
+Output:-
+Enter the number: 12345
+15
